@@ -81,14 +81,4 @@
     form.addEventListener('submit', (e) => e.preventDefault());
     render();
   });
-
-  // Home-visit forms: compose the WhatsApp message from the fields, no backend.
-  document.querySelectorAll('[data-wa-form]').forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const f = Object.fromEntries(new FormData(form));
-      const msg = `Hi Saifee Lab, I'd like a home visit.\nName: ${f.name || ''}\nArea: ${f.area || ''}\nDate: ${f.date || ''}\nTests: ${f.tests || ''}`;
-      window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
-    });
-  });
 })();
