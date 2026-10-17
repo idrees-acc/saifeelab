@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saifee Lab · Blood tests in Marol, Andheri East</title>
+<meta name="description" content="NABL-approved blood collection centre at Bori Colony, Marol. Walk in from 7:30 am or book a home visit anywhere in Mumbai.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/base.css">
+<style>
+:root {
+  --bg: #f5f8f6;
+  --surface: #e4ede7;
+  --ink: #0d1f17;
+  --muted: #2c3d35;
+  --green: #0a5f3b;
+  --green-deep: #08452c;
+  --green-mid: #3f8c66;
+  --green-pale: #b9d8c6;
+  --accent: #d3202a;
+  --accent-strong: #b0151e;
+  --accent-ink: #ffffff;
+  --font-display: 'Chillax', system-ui, sans-serif;
+  --font-text: 'Chillax', system-ui, sans-serif;
+  --step-display: clamp(3.4rem, 6vw, 5.75rem);
+  --radius: 999px;
+  --margin: clamp(1rem, 2.4vw, 2.25rem);
+  --section: clamp(6rem, 13vw, 12rem);
+}
+body { font-weight: 400; overflow-x: hidden; }
+p { max-width: 46ch; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
+.button { min-height: 3.4rem; padding: 0 1.8rem; font-weight: 500; }
+@media (hover: hover) and (pointer: fine) { .button:hover { background: var(--accent-strong); } }
+.circle { border-radius: 50%; overflow: hidden; }
+.circle img { width: 100%; height: 100%; object-fit: cover; }
+.js [data-reveal] { transition-delay: calc(var(--d, 0) * 80ms); }
+
+/* ---------- nav ---------- */
+.nav { position: absolute; inset: 0 0 auto 0; z-index: 3; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem var(--margin); }
+.wordmark { font-family: var(--font-display); font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.03em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+.wordmark i { width: 0.8em; height: 0.8em; border-radius: 50%; border: 0.17em solid var(--green); display: inline-block; }
+.nav ul { display: flex; gap: 1.8rem; color: var(--bg); font-weight: 500; }
+.nav a { text-decoration: none; }
+
+/* ---------- hero ---------- */
+.hero { position: relative; min-height: 100svh; overflow: hidden; display: grid; align-items: center; }
+.ring { position: absolute; width: 112vh; height: 112vh; left: 82%; top: 55%; translate: -50% -50%; border-radius: 50%; background: var(--green); display: grid; place-items: center; }
+.ring .field { width: 74%; height: 74%; }
+.ring .drift { width: 100%; height: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .open-load { animation: open 1100ms var(--ease-in-out) 200ms both; }
+  @keyframes open { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+}
+.hero__copy { position: relative; z-index: 2; padding-left: 8vw; max-width: 46rem; }
+.hero h1 { font-size: var(--step-display); }
+.hero .lead { margin-top: 1.6rem; font-size: var(--step-body); max-width: 32ch; }
+.hero__act { margin-top: 2.2rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+.status { font-weight: 500; display: inline-flex; align-items: center; gap: 0.55rem; }
+.status::before { content: ''; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--green); }
+.status[data-state="closed"]::before { background: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .drift img { animation: drift 24s var(--ease-in-out) infinite alternate; }
+  @keyframes drift { from { transform: scale(1.04) translate(0, 0); } to { transform: scale(1.14) translate(-3%, 2%); } }
+}
+@media (max-width: 760px) {
+  .hero { align-items: start; min-height: 100svh; }
+  .ring { width: 130vw; height: 130vw; left: 50%; top: 56svh; translate: -50% 0; }
+  .hero__copy { padding: 15svh 1rem 0; }
+  .hero h1 { font-size: 11.5vw; }
+  .hero .lead { font-size: 1rem; }
+  .nav ul li:not(:last-child) { display: none; }
+  .nav ul { color: var(--ink); }
+}
+
+/* ---------- live band ---------- */
+.plan { background: var(--green); color: #fff; padding: clamp(4rem, 9vw, 8rem) var(--margin); display: grid; grid-template-columns: 5fr 7fr; gap: var(--gutter) 4rem; align-items: start; }
+.plan h2 { font-size: var(--step-head); }
+.plan .intro { margin-top: 1.4rem; max-width: 40ch; }
+.plan form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.plan label { display: grid; gap: 0.4rem; font-weight: 500; min-width: 0; }
+.plan select, .plan input { min-height: 3.6rem; padding: 0 1.2rem; border: 0; border-radius: var(--radius); background: var(--green-deep); color: #fff; font-size: var(--step-body); color-scheme: dark; width: 100%; min-width: 0; }
+.plan output { grid-column: 1 / -1; display: block; font-size: var(--step-lead); line-height: 1.3; font-weight: 500; margin-top: 1.4rem; max-width: 30ch; }
+.plan .button { grid-column: 1 / -1; justify-self: start; margin-top: 1rem; }
+@media (max-width: 1000px) { .plan { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .plan form { grid-template-columns: 1fr; } }
+
+/* ---------- tests ---------- */
+.tests { padding: var(--section) var(--margin) 0; }
+.tests > h2 { font-size: var(--step-head); }
+.tests > p { margin-top: 1rem; }
+.cat { display: flex; justify-content: space-between; align-items: baseline; margin: 6rem 0 2.5rem; }
+.cat h3 { font-size: var(--step-head); }
+.cat span { font-weight: 500; white-space: nowrap; }
+.menu { display: grid; grid-template-columns: 1fr 1fr; gap: 2.25rem 4rem; }
+.item { display: grid; grid-template-columns: 64px 1fr; gap: 1.25rem; align-items: start; }
+.item .circle { width: 64px; height: 64px; }
+.item h4 { margin: 0; display: flex; justify-content: space-between; gap: 1rem; font-size: var(--step-body); font-weight: 600; }
+.item h4 b { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.item p { margin-top: 0.35rem; max-width: 40ch; }
+.item em { display: block; font-style: normal; margin-top: 0.35rem; color: var(--accent); font-weight: 500; }
+@media (max-width: 760px) { .menu { grid-template-columns: 1fr; } .item { grid-template-columns: 52px 1fr; } .item .circle { width: 52px; height: 52px; }  }
+
+/* ---------- how it works ---------- */
+.how { padding: var(--section) var(--margin) 0; }
+.how__intro { display: grid; grid-template-columns: 5fr 7fr; gap: var(--gutter); align-items: end; }
+.how__intro h2 { font-size: var(--step-head); }
+.how__intro p { max-width: 44ch; }
+.steps { margin-top: 4rem; display: flex; height: 540px; }
+.steps details { flex: 1 1 0; min-width: 0; color: #fff; position: relative; overflow: hidden; transition: flex-grow 450ms var(--ease-out); }
+.steps details[open] { flex-grow: 6; }
+.steps details:nth-child(1) { background: var(--green-deep); }
+.steps details:nth-child(2) { background: var(--green); }
+.steps details:nth-child(3) { background: var(--green-mid); }
+.steps details:nth-child(4) { background: var(--green-pale); color: var(--ink); }
+.steps summary { list-style: none; cursor: pointer; position: absolute; inset: 0; padding: 1.5rem; font-weight: 600; font-size: var(--step-body); }
+.steps summary::-webkit-details-marker { display: none; }
+.steps details:not([open]) summary span { position: absolute; left: 1.5rem; bottom: 1.5rem; writing-mode: vertical-rl; rotate: 180deg; white-space: nowrap; }
+.steps details[open] summary { pointer-events: none; font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; max-width: 46%; }
+.steps .body { position: absolute; inset: 0; padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
+.steps .body p { max-width: 34ch; }
+.steps .body .circle { align-self: center; justify-self: center; width: min(100%, 400px); aspect-ratio: 1; }
+@media (max-width: 760px) {
+  .how__intro { grid-template-columns: 1fr; gap: 1rem; }
+  .steps { flex-direction: column; height: auto; }
+  .steps details, .steps details[open] { flex: none; min-height: 64px; }
+  .steps summary, .steps details[open] summary { position: static; display: block; font-size: var(--step-body); padding: 1.1rem 1rem; max-width: none; pointer-events: auto; }
+  .steps details:not([open]) summary span { position: static; writing-mode: horizontal-tb; rotate: none; }
+  .steps .body { position: static; grid-template-columns: 1fr; padding: 0 1rem 1.5rem; }
+  .steps .body .circle { width: 60%; justify-self: start; }
+}
+
+/* ---------- reviews ---------- */
+.reviews { margin-top: var(--section); display: grid; grid-template-columns: 5fr 7fr; min-height: 70svh; }
+.reviews .who { background: var(--ink); color: #fff; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+.reviews .score { font-family: var(--font-display); font-size: var(--step-display); font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+.reviews .score + p { margin-top: 0.8rem; max-width: 34ch; }
+.reviews .name b { display: block; font-weight: 500; }
+.reviews .name span { color: #c6d3cc; }
+.reviews .what { background: var(--surface); padding: clamp(2rem, 5vw, 5rem); display: flex; flex-direction: column; justify-content: center; gap: 3rem; }
+.reviews blockquote p { font-size: var(--step-lead); line-height: 1.25; font-weight: 500; max-width: 26ch; }
+.reviews blockquote footer { margin-top: 1rem; color: var(--muted); }
+.reviews .second p { font-size: var(--step-body); font-weight: 400; }
+@media (max-width: 760px) { .reviews { grid-template-columns: 1fr; } .reviews .who { min-height: 40svh; } }
+
+/* ---------- faq ---------- */
+.faq { padding: var(--section) var(--margin) 0; display: grid; grid-template-columns: 4fr 8fr; gap: var(--gutter); align-items: start; }
+.faq h2 { font-size: var(--step-head); position: sticky; top: 96px; }
+.faq__list { display: grid; gap: 8px; }
+.faq details { background: var(--surface); border-radius: 36px; transition: background-color var(--t-ui) ease, color var(--t-ui) ease; }
+.faq details[open] { background: var(--green); color: #fff; }
+.faq summary { list-style: none; cursor: pointer; min-height: 72px; padding: 1.1rem 1.6rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: var(--step-body); font-weight: 500; }
+.faq summary::-webkit-details-marker { display: none; }
+.plus { position: relative; width: 16px; height: 16px; flex: none; }
+.plus::before, .plus::after { content: ''; position: absolute; left: 0; top: 6.5px; width: 16px; height: 3px; background: currentColor; border-radius: 2px; transition: rotate var(--t-ui) var(--ease-out); }
+.plus::after { rotate: 90deg; }
+details[open] .plus::after { rotate: 0deg; }
+.faq details p { padding: 0 1.6rem 1.6rem; max-width: 52ch; }
+@media (max-width: 760px) { .faq { grid-template-columns: 1fr; } .faq h2 { position: static; margin-bottom: 1rem; } }
+
+.tests__head { display: grid; grid-template-columns: 7fr 5fr; gap: var(--gutter); align-items: center; }
+.tests__head p { margin-top: 1rem; max-width: 44ch; }
+.tests__pic { width: min(100%, 420px); aspect-ratio: 1; justify-self: end; }
+.roads { padding: var(--section) var(--margin) 0; }
+.roads__pics { display: grid; grid-template-columns: 5fr 4fr 3fr; gap: var(--gutter); align-items: end; }
+.roads__pics .circle { aspect-ratio: 1; }
+.roads p { margin-top: 2.5rem; font-size: var(--step-lead); line-height: 1.3; font-weight: 500; max-width: 34ch; }
+@media (max-width: 760px) { .tests__head { grid-template-columns: 1fr; } .tests__pic { width: 70%; justify-self: start; } .roads__pics { grid-template-columns: 1fr 1fr; } .roads__pics .circle:first-child { grid-column: 1 / -1; width: 80%; } }
+
+/* ---------- coupon ---------- */
+.visit { padding: clamp(4rem, 8vw, 7rem) var(--margin) var(--section); }
+.coupon { position: relative; margin-inline: auto; max-width: 1180px; background: var(--accent); color: #fff; border-radius: 28px; display: grid; grid-template-columns: 46fr 54fr; min-height: 520px; }
+.coupon::before, .coupon::after { content: ''; position: absolute; left: 46%; width: 56px; height: 56px; translate: -50% 0; border-radius: 50%; background: var(--bg); }
+.coupon::before { top: -28px; } .coupon::after { bottom: -28px; }
+.coupon__left { padding: 3rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
+.coupon h2 { font-size: var(--step-head); }
+.perf { position: absolute; left: 46%; top: 44px; bottom: 44px; translate: -50% 0; display: flex; flex-direction: column; justify-content: space-between; }
+.perf span { width: 6px; height: 6px; border-radius: 50%; background: var(--bg); }
+.coupon form { padding: 3rem; display: grid; gap: 10px; align-content: center; }
+.coupon input { min-height: 52px; padding: 0 1.3rem; border: 0; border-radius: var(--radius); background: #e2545b; color: #fff; font-size: var(--step-body); }
+.coupon input::placeholder { color: #fff; opacity: 0.9; }
+.coupon button { min-height: 56px; margin-top: 6px; border-radius: var(--radius); background: var(--ink); color: #fff; font-weight: 500; transition: transform var(--t-press) var(--ease-out); }
+.coupon button:active { transform: scale(0.98); }
+@media (max-width: 760px) {
+  .visit { padding-inline: 12px; }
+  .coupon { grid-template-columns: 1fr; border-radius: 22px; }
+  .coupon::before, .coupon::after { display: none; }
+  .perf { display: none; }
+  .coupon__left, .coupon form { padding: 2rem 1.4rem; }
+  .coupon form { padding-top: 0; }
+  .coupon input, .coupon button { min-height: 54px; }
+}
+
+/* ---------- footer ---------- */
+.foot { background: var(--ink); color: #fff; padding: 3rem var(--margin) 2rem; }
+.mark { display: flex; align-items: center; gap: 3vw; min-height: 34svh; }
+.mark .big-ring { width: 30svh; height: 30svh; border-radius: 50%; border: 6svh solid var(--green); flex: none; }
+.mark b { font-family: var(--font-display); font-weight: 600; font-size: 13.5vw; letter-spacing: -0.05em; line-height: 0.85; }
+.foot__cols { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(4, 1fr) 2fr; gap: 2rem; }
+.foot__cols h3 { font-family: var(--font-text); font-size: var(--step-body); font-weight: 500; letter-spacing: 0; color: #c6d3cc; margin-bottom: 0.6rem; }
+.foot__cols a { text-decoration: none; }
+.foot__cols li { margin-bottom: 0.35rem; white-space: nowrap; }
+.foot__end { margin-top: 3rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+@media (max-width: 1000px) { .foot__cols { grid-template-columns: 1fr 1fr; } .foot__cols > div:last-child { grid-column: 1 / -1; } }
+.credits { margin-top: 2.5rem; color: #c6d3cc; font-size: var(--step-small); max-width: 52ch; }
+.credits a { color: #fff; }
+@media (max-width: 760px) {
+  .mark { min-height: 22svh; } .mark .big-ring { width: 18vw; height: 18vw; border-width: 4vw; } .mark b { font-size: 16vw; }
+  .foot__cols { grid-template-columns: 1fr 1fr; } .foot__cols > div:last-child { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="wordmark" href="#top" aria-label="Saifee Lab, home"><i aria-hidden="true"></i>Saifee Lab</a>
+  <ul class="links">
+    <li><a class="link" href="#tests">Tests</a></li>
+    <li><a class="link" href="#how">How it works</a></li>
+    <li><a class="link" href="#visit">Home visit</a></li>
+  </ul>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="ring" aria-hidden="true">
+      <div class="field circle open-load"><div class="drift circle"><img src="../assets/eosinophil-blood-smear.jpg" width="1600" height="1458" alt=""></div></div>
+    </div>
+    <div class="hero__copy">
+      <h1 class="lines"><span class="line"><span data-line style="--i:0">Blood tests</span></span><span class="line"><span data-line style="--i:1">in Marol</span></span></h1>
+      <p class="lead" data-rise style="--i:2">NABL-approved collection centre at Bori Colony. Walk in from 7:30 am, or we come home to you anywhere in Mumbai.</p>
+      <div class="hero__act" data-rise style="--i:3">
+        <a class="button" href="https://wa.me/917304398073?text=Hi%20Saifee%20Lab%2C%20I%27d%20like%20to%20book%20a%20blood%20test.">Book on WhatsApp</a>
+        <span class="status" data-open-now>Mon–Sat 7:30 am – 8 pm</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="plan" aria-labelledby="plan-h">
+    <div data-reveal>
+      <h2 id="plan-h">When to come in</h2>
+      <p class="intro">Sugar and cholesterol tests need an empty stomach. Tell us when you last ate and we'll tell you when to come.</p>
+    </div>
+    <form data-fast data-reveal style="--d:1">
+      <label>Your test
+        <select name="test">
+          <option value="10" data-name="lipid profile">Lipid profile · 10 hrs fast</option>
+          <option value="8" data-name="fasting sugar test">Fasting sugar · 8 hrs fast</option>
+          <option value="10" data-name="full body check">Full body check · 10 hrs fast</option>
+          <option value="0" data-name="blood test">CBC, thyroid, vitamins · no fast</option>
+        </select>
+      </label>
+      <label>You last ate at
+        <input type="time" name="meal" value="21:00">
+      </label>
+      <output data-fast-out aria-live="polite">Fasting sugar needs 8–10 hours without food, a lipid profile 10–12. We open at 7:30 am every day.</output>
+      <a class="button" data-fast-book href="https://wa.me/917304398073">Book this time</a>
+    </form>
+  </section>
+
+  <section class="tests" id="tests" aria-labelledby="tests-h">
+    <div class="tests__head">
+      <div><h2 id="tests-h" data-reveal>Tests and prices</h2>
+      <p data-reveal style="--d:1">The tests people come in for most, with what each one checks and whether you need to fast. Ask on WhatsApp for anything not listed.</p></div>
+      <div class="circle tests__pic" data-reveal style="--d:2"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1066" alt="A rack of blood collection tubes with red caps" loading="lazy"></div>
+    </div>
+
+    <div class="cat" data-reveal><h3>Everyday tests</h3><span>8 tests</span></div>
+    <div class="menu">
+      <div class="item" data-reveal><div class="circle"><img src="../assets/pink-vacutainer.jpg" width="1600" height="702" alt="" loading="lazy" style="object-position:12% 50%"></div><div><h4>Complete blood count <b>₹300</b></h4><p>Haemoglobin, white cells and platelets. The first test for tiredness, fever or infection.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/vacutainer-with-blood-collection-tube.jpg" width="1200" height="1600" alt="" loading="lazy"></div><div><h4>Blood sugar, fasting and PP <b>₹150</b></h4><p>Two samples: one on an empty stomach, one two hours after a meal.</p><em>Fast 8–10 hours</em></div></div>
+      <div class="item" data-reveal><div class="circle"><img src="../assets/pink-vacutainer.jpg" width="1600" height="702" alt="" loading="lazy" style="object-position:60% 50%"></div><div><h4>HbA1c <b>₹450</b></h4><p>Your average blood sugar over the last three months. Used to diagnose and follow diabetes.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="" loading="lazy"></div><div><h4>Lipid profile <b>₹600</b></h4><p>Total cholesterol, triglycerides, HDL and LDL. The heart-health check.</p><em>Fast 10–12 hours</em></div></div>
+      <div class="item" data-reveal><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="" loading="lazy" style="object-position:20% 30%"></div><div><h4>Thyroid profile <b>₹500</b></h4><p>T3, T4 and TSH. Morning samples are best if you take thyroid tablets.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="" loading="lazy" style="object-position:80% 30%"></div><div><h4>Liver function test <b>₹600</b></h4><p>Bilirubin, liver enzymes, proteins. Often asked for with jaundice or regular medicines.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="" loading="lazy" style="object-position:50% 80%"></div><div><h4>Kidney function test <b>₹600</b></h4><p>Creatinine, urea, uric acid and electrolytes.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/optics-two-kinds-of-specialist-microscope-engraving.jpg" width="1600" height="1247" alt="" loading="lazy" style="object-position:75% 50%"></div><div><h4>Urine routine <b>₹150</b></h4><p>Bring a first-morning sample in our container, or give it at the centre.</p><em>Morning sample</em></div></div>
+    </div>
+
+    <div class="cat" data-reveal><h3>Vitamins, fever, clotting</h3><span>6 tests</span></div>
+    <div class="menu">
+      <div class="item" data-reveal><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="" loading="lazy" style="object-position:35% 10%"></div><div><h4>Vitamin D <b>₹1,200</b></h4><p>For bone pain, low energy and weak immunity. Very common in Mumbai office workers.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="" loading="lazy" style="object-position:65% 10%"></div><div><h4>Vitamin B12 <b>₹900</b></h4><p>For tingling, numbness and tiredness, and for vegetarians on metformin.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal><div class="circle"><img src="../assets/band-neutrophil.jpg" width="1600" height="1352" alt="" loading="lazy"></div><div><h4>Dengue NS1 antigen <b>₹600</b></h4><p>Picks up dengue in the first five days of fever. Pair it with a CBC for platelets.</p><em>Monsoon priority</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/eosinophil-blood-smear.jpg" width="1600" height="1458" alt="" loading="lazy"></div><div><h4>Malaria antigen and smear <b>₹400</b></h4><p>A rapid test plus a slide read under the microscope.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="" loading="lazy" style="object-position:5% 60%"></div><div><h4>Typhoid (Widal) and CRP <b>₹600</b></h4><p>For a fever that won't settle. CRP shows how much inflammation there is.</p><em>No fasting</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/blue-vacutainer.jpg" width="1600" height="730" alt="" loading="lazy" style="object-position:12% 50%"></div><div><h4>PT / INR <b>₹500</b></h4><p>How fast your blood clots. Needed before surgery and on blood thinners.</p><em>Light-blue cap tube</em></div></div>
+    </div>
+
+    <div class="cat" data-reveal><h3>Health packages</h3><span>2 packages</span></div>
+    <div class="menu">
+      <div class="item" data-reveal><div class="circle"><img src="../assets/drawing-blood-from-a-vein-through-phlebotomy.jpg" width="900" height="1600" alt="" loading="lazy"></div><div><h4>Basic health check <b>₹999</b></h4><p>CBC, fasting sugar, lipid profile, liver and kidney function, urine routine. One visit.</p><em>Fast 10–12 hours</em></div></div>
+      <div class="item" data-reveal style="--d:1"><div class="circle"><img src="../assets/vacutainer-with-blood-collection-tube.jpg" width="1200" height="1600" alt="" loading="lazy" style="object-position:50% 20%"></div><div><h4>Full body check <b>₹1,999</b></h4><p>Everything in the basic check, plus thyroid, HbA1c, vitamin D and B12.</p><em>Fast 10–12 hours</em></div></div>
+    </div>
+  </section>
+
+  <section class="how" id="how" aria-labelledby="how-h">
+    <div class="how__intro">
+      <h2 id="how-h" data-reveal>Ten minutes, start to finish</h2>
+      <p data-reveal style="--d:1">No appointment needed at the centre. Walk in, give your sample and go to work. The report reaches your phone.</p>
+    </div>
+    <div class="steps" data-reveal style="--d:2">
+      <details name="steps" open>
+        <summary><span>Message or walk in</span></summary>
+        <div class="body"><p>Send a WhatsApp to 73043 98073 to fix a time, or simply walk in to Shop no. 4, Old Bazar, from 7:30 am.</p><div class="circle"><img src="../assets/andheri-market.jpg" width="1600" height="1200" alt="A busy market street in Andheri, Mumbai" loading="lazy"></div></div>
+      </details>
+      <details name="steps">
+        <summary><span>One gentle prick</span></summary>
+        <div class="body"><p>A trained phlebotomist draws your sample with a fresh, sealed needle. It takes about five minutes.</p><div class="circle"><img src="../assets/drawing-blood-from-a-vein-through-phlebotomy.jpg" width="900" height="1600" alt="A blood sample being drawn from a patient's arm" loading="lazy"></div></div>
+      </details>
+      <details name="steps">
+        <summary><span>Tested at a NABL lab</span></summary>
+        <div class="body"><p>Your tubes are labelled at the counter and processed at a NABL-approved laboratory.</p><div class="circle"><img src="../assets/band-neutrophil.jpg" width="1600" height="1352" alt="Blood cells seen under a microscope" loading="lazy"></div></div>
+      </details>
+      <details name="steps">
+        <summary><span>Report on WhatsApp</span></summary>
+        <div class="body"><p>Most routine reports arrive as a PDF the same evening. Print copies are ready at the centre.</p><div class="circle"><img src="../assets/vacutainer-tubes.jpg" width="1600" height="1067" alt="A rack of blood collection tubes with red caps" loading="lazy"></div></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="reviews" aria-label="Reviews">
+    <div class="who" data-reveal>
+      <div><p class="score">4.8</p><p>out of 5 on Google, from 12 reviews. The words that come up most: fast report, accurate reports, professional staff.</p></div>
+      <p class="name"><b>Maimoona C.</b><span>Google review</span></p>
+    </div>
+    <div class="what">
+      <blockquote data-reveal style="--d:1"><p>Professional people and maintained very well. Fast and accurate report.</p></blockquote>
+      <blockquote class="second" data-reveal style="--d:2"><p>“Very kind and devoted to patient-centric humbleness.”</p><footer>Dr Murtaza Kothawala, Hakimi Clinic</footer></blockquote>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h" data-reveal>Before you come</h2>
+    <div class="faq__list">
+      <details name="faq" data-reveal><summary>Do I need an appointment?<span class="plus"></span></summary><p>No. Walk in any day from 7:30 am; we close at 8 pm, and at 6 pm on Sundays. For a home visit, message us a day ahead.</p></details>
+      <details name="faq" data-reveal><summary>How long should I fast?<span class="plus"></span></summary><p>8 to 10 hours for fasting sugar, 10 to 12 hours for a lipid profile or full body check. Plain water is fine. Take your regular medicines unless your doctor says otherwise.</p></details>
+      <details name="faq" data-reveal><summary>When will I get my report?<span class="plus"></span></summary><p>Most routine tests the same evening, as a PDF on WhatsApp. Special tests such as vitamins can take one to two days.</p></details>
+      <details name="faq" data-reveal><summary>Do you come home?<span class="plus"></span></summary><p>Yes, anywhere in Mumbai. Early-morning visits are the best for fasting tests. Send your area and preferred time on WhatsApp.</p></details>
+      <details name="faq" data-reveal><summary>Is the lab NABL approved?<span class="plus"></span></summary><p>Yes. Samples collected at Saifee Lab are processed at a NABL-approved laboratory.</p></details>
+      <details name="faq" data-reveal><summary>Do I need a doctor's prescription?<span class="plus"></span></summary><p>Not for routine tests. If you have one, bring it so we run exactly what your doctor asked for.</p></details>
+      <details name="faq" data-reveal><summary>How can I pay?<span class="plus"></span></summary><p>Cash or UPI at the centre, or to the phlebotomist on a home visit.</p></details>
+    </div>
+  </section>
+
+  <section class="roads" aria-label="Home visits across Mumbai">
+    <div class="roads__pics">
+      <div class="circle" data-reveal><img src="../assets/best-buses-on-m-v-road.jpg" width="1600" height="1200" alt="Red BEST buses on M.V. Road, Andheri East" loading="lazy"></div>
+      <div class="circle" data-reveal style="--d:1"><img src="../assets/andheri-market.jpg" width="1600" height="1200" alt="Shoppers in a street market in Andheri" loading="lazy"></div>
+      <div class="circle" data-reveal style="--d:2"><img src="../assets/vacutainer-with-blood-collection-tube.jpg" width="1200" height="1600" alt="A butterfly needle and a sealed blood collection tube" loading="lazy"></div>
+    </div>
+    <p data-reveal style="--d:3">Marol, Saki Naka, Chakala, Andheri, Powai and beyond. Our phlebotomist brings sealed needles and tubes to your door, from 7 in the morning.</p>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visit-h">
+    <div class="coupon" data-reveal>
+      <div class="coupon__left">
+        <h2 id="visit-h">We come to you</h2>
+        <p>Anywhere in Mumbai, from 7 am. Fill this in and it opens WhatsApp with your request written out.</p>
+      </div>
+      <div class="perf" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <form data-wa-form>
+        <label class="sr-only" for="v-name">Your name</label><input id="v-name" name="name" placeholder="Your name" autocomplete="name">
+        <label class="sr-only" for="v-area">Area</label><input id="v-area" name="area" placeholder="Area, e.g. Marol, Saki Naka">
+        <label class="sr-only" for="v-date">Preferred date and time</label><input id="v-date" name="date" placeholder="Date and time">
+        <label class="sr-only" for="v-tests">Tests</label><input id="v-tests" name="tests" placeholder="Tests, or 'not sure'">
+        <button type="submit">Send on WhatsApp</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="mark" aria-hidden="true"><span class="big-ring"></span><b>Saifee Lab</b></div>
+  <div class="foot__cols">
+    <div><h3>Visit</h3><ul class="plain"><li><a class="link" href="#tests">Tests and prices</a></li><li><a class="link" href="#how">How it works</a></li><li><a class="link" href="#visit">Home visit</a></li></ul></div>
+    <div><h3>Hours</h3><ul class="plain"><li>Mon–Sat 7:30 am – 8 pm</li><li>Sunday 7:30 am – 6 pm</li></ul></div>
+    <div><h3>Call</h3><ul class="plain"><li><a class="link" href="tel:+917304398073">73043 98073</a></li><li><a class="link" href="tel:+917738434252">77384 34252</a></li></ul></div>
+    <div><h3>Follow</h3><ul class="plain"><li><a class="link" href="https://www.instagram.com/saifee_lab/">Instagram</a></li><li><a class="link" href="https://www.google.com/maps/search/?api=1&query=Saifee+lab+Marol+Andheri+East">Google Maps</a></li></ul></div>
+    <div><h3>Find us</h3><p>Shop no. 4, Marubai Mendonsa Chawl, Old Bazar, near St Lawrence School, Bori Colony, Marol, Andheri East, Mumbai 400059</p></div>
+  </div>
+  <div class="foot__end"><span>© 2026 Saifee Lab</span><a class="button" href="https://wa.me/917304398073">Book on WhatsApp</a></div>
+  <p class="credits">Pictures show the world of blood testing and Andheri, not Saifee Lab itself: <a href="https://commons.wikimedia.org/wiki/File:Vacutainer_tubes.jpg">“Vacutainer tubes”</a> by Håkan Dahlström, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Blue_vacutainer.jpg">“Blue vacutainer”</a> and <a href="https://commons.wikimedia.org/wiki/File:Pink_vacutainer.jpg">“Pink vacutainer”</a> by Whispyhistory, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=141417955">“Vacutainer with blood collection tube”</a> by Whispyhistory, <a href="https://creativecommons.org/licenses/by/3.0/us/deed.en/">CC BY 3.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=7761793">“Eosinophil blood smear”</a> and <a href="https://commons.wikimedia.org/w/index.php?curid=7777327">“Band neutrophil”</a> by Bobjgalindo, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=149293736">“Drawing blood from a vein”</a> by Harrison Keely, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; <a href="https://www.flickr.com/photos/59353670@N00/303211962">“Andheri Market”</a> by madpai, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=36575637">“Optics: two kinds of specialist microscope”</a>, engraving 1787, Wellcome Collection, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. All via Wikimedia Commons or Flickr.</p>
+</footer>
+
+<script src="../shared/base.js"></script>
+<script src="../shared/live.js"></script>
+</body>
+</html>

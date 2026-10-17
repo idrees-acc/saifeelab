@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saifee Lab · Blood tests in Marol, Andheri East</title>
+<meta name="description" content="NABL-approved blood collection centre at Bori Colony, Marol. Walk in from 7:30 am or book a home visit anywhere in Mumbai.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/base.css">
+<style>
+:root {
+  --bg: #e9eeeb;
+  --paper: #f6f8f7;
+  --surface: #dde5e0;
+  --ink: #111714;
+  --muted: #26302b;
+  --green: #0a5f3b;
+  --green-2: #0c6c44;
+  --accent: #c8102e;
+  --accent-strong: #a50d26;
+  --accent-ink: #ffffff;
+  --font-display: 'Clash Grotesk', system-ui, sans-serif;
+  --font-text: 'Clash Grotesk', system-ui, sans-serif;
+  --step-display: clamp(2.5rem, 3.6vw, 3.5rem);
+  --radius: 0px;
+  --margin: 12px;
+}
+body { overflow-x: clip; line-height: 1.45; }
+p { max-width: 46ch; }
+h1, h2, h3 { font-weight: 400; letter-spacing: -0.03em; line-height: 0.98; }
+h2 { font-size: var(--step-head); }
+.button { font-weight: 500; min-height: 3.4rem; padding: 0 1.8rem; }
+@media (hover: hover) and (pointer: fine) { .button:hover { background: var(--accent-strong); } }
+.js [data-reveal] { transition-delay: calc(var(--d, 0) * 80ms); }
+
+/* ---------- the stage: reading column left, fixed photograph right ---------- */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 12px; }
+.stage { position: sticky; top: 12px; height: calc(100svh - 24px); overflow: hidden; background: var(--ink); grid-column: 2; grid-row: 1; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1600ms ease; }
+.stage img.is-on { opacity: 1; }
+.stage figcaption { position: absolute; left: 0; bottom: 0; background: var(--paper); padding: 0.6rem 0.9rem; font-size: var(--step-small); }
+@media (prefers-reduced-motion: no-preference) {
+  .stage img.is-on { animation: breathe 14s var(--ease-in-out) infinite alternate; }
+  @keyframes breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
+}
+.read { grid-column: 1; grid-row: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-content: start; min-width: 0; }
+.read > section { background: var(--paper); padding: clamp(2rem, 4.5vw, 4.5rem); }
+
+/* ---------- the card ---------- */
+.card { min-height: calc(100svh - 24px); display: flex; flex-direction: column; text-align: center; padding: 0 !important; }
+.barcode { height: 56px; display: flex; overflow: hidden; flex: none; }
+.barcode span { flex: none; height: 100%; }
+.barcode span:nth-child(odd) { background: var(--ink); }
+.card__body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem; padding: 3rem 2rem; }
+.card .wm { font-size: var(--step-lead); font-weight: 500; letter-spacing: -0.01em; }
+.card h1 { font-size: var(--step-display); max-width: 17ch; }
+.card p { max-width: 36ch; }
+.card .status { font-weight: 500; }
+.card nav { display: flex; gap: 2rem; justify-content: center; padding: 0 1rem 28px; flex-wrap: wrap; }
+.card nav a { text-decoration: none; }
+
+/* ---------- live: when to come ---------- */
+.when { background: var(--green) !important; color: #fff; }
+.when .intro { margin-top: 1rem; }
+.when form { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.when label { display: grid; gap: 0.4rem; font-weight: 500; min-width: 0; }
+.when select, .when input { min-height: 3.5rem; padding: 0 1rem; border: 0; background: #08492e; color: #fff; font-size: var(--step-body); width: 100%; color-scheme: dark; }
+.when output { grid-column: 1 / -1; display: block; margin-top: 1rem; font-size: var(--step-lead); line-height: 1.3; font-weight: 500; max-width: 28ch; }
+.when .button { grid-column: 1 / -1; justify-self: start; margin-top: 0.6rem; }
+
+/* ---------- tests: giant word, filled bars ---------- */
+.tests { container-type: inline-size; }
+.giant { font-size: 31cqw; font-weight: 500; line-height: 0.8; letter-spacing: -0.04em; text-transform: uppercase; margin-left: -0.04em; }
+.tests > p { margin-top: 1.6rem; }
+.bars { margin-top: 20px; display: grid; gap: 6px; }
+.bars details { background: var(--surface); }
+.bars summary { list-style: none; cursor: pointer; min-height: 56px; padding: 0 18px; display: flex; align-items: center; justify-content: space-between; font-weight: 500; transition: background-color var(--t-hover) ease; }
+.bars summary::-webkit-details-marker { display: none; }
+@media (hover: hover) and (pointer: fine) { .bars summary:hover { background: #d1dcd5; } }
+.plus { position: relative; width: 16px; height: 16px; flex: none; }
+.plus::before, .plus::after { content: ''; position: absolute; left: 0; top: 6.5px; width: 16px; height: 3px; background: currentColor; transition: rotate var(--t-ui) var(--ease-out); }
+.plus::after { rotate: 90deg; }
+details[open] .plus::after { rotate: 0deg; }
+.bars ul { padding: 4px 18px 20px; display: grid; gap: 14px; }
+.bars li { display: grid; grid-template-columns: 1fr auto; gap: 0.1rem 1rem; }
+.bars li b { font-weight: 500; font-variant-numeric: tabular-nums; }
+.bars li span { grid-column: 1 / -1; font-size: var(--step-small); }
+.tests .note { margin-top: 1.6rem; }
+
+/* ---------- how: the slip ---------- */
+.how { background: var(--ink) !important; color: #fff; }
+.how > p { margin-top: 1rem; }
+.slip { margin-top: 2.5rem; background: var(--paper); color: var(--ink); padding: 1.8rem 1.6rem 3rem; max-width: 480px; font-variant-numeric: tabular-nums;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), 100.000% 100%, 95.833% calc(100% - 14px), 91.667% 100%, 87.500% calc(100% - 14px), 83.333% 100%, 79.167% calc(100% - 14px), 75.000% 100%, 70.833% calc(100% - 14px), 66.667% 100%, 62.500% calc(100% - 14px), 58.333% 100%, 54.167% calc(100% - 14px), 50.000% 100%, 45.833% calc(100% - 14px), 41.667% 100%, 37.500% calc(100% - 14px), 33.333% 100%, 29.167% calc(100% - 14px), 25.000% 100%, 20.833% calc(100% - 14px), 16.667% 100%, 12.500% calc(100% - 14px), 8.333% 100%, 4.167% calc(100% - 14px), 0.000% 100%, 0 calc(100% - 14px)); }
+.slip h3 { font-size: var(--step-body); font-weight: 500; letter-spacing: 0; margin: 1.75rem 0 0.6rem; }
+.slip h3:first-child { margin-top: 0; }
+.slip li { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.3rem 0; }
+.slip .v { white-space: nowrap; }
+.slip li i { flex: 1; min-width: 1rem; height: 0; border-bottom: 4px dotted #9aa8a0; translate: 0 -4px; }
+.slip .total { margin: 1.4rem -1.6rem 0; background: var(--ink); color: var(--paper); min-height: 44px; padding: 0 1.6rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-weight: 500; }
+
+/* ---------- faq as reading text ---------- */
+.faq .notes { margin-top: 2rem; display: grid; gap: 20px; }
+.faq .notes p { max-width: 52ch; }
+.faq .notes b { font-weight: 500; }
+
+/* ---------- full width: reviews on slips ---------- */
+.reviews { margin: 0 12px; background: var(--green); color: var(--ink); padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 5rem) clamp(5rem, 10vw, 9rem); }
+.reviews h2 { color: #fff; font-size: var(--step-head); }
+.slips { margin-top: 4rem; display: flex; justify-content: center; align-items: flex-start; }
+.slips > * { background: var(--paper); width: 380px; padding: 2rem 1.8rem; flex: none; transition: rotate var(--t-ui) var(--ease-out); }
+.slips > :nth-child(1) { min-height: 300px; rotate: -4deg; }
+.slips > :nth-child(2) { min-height: 340px; rotate: 2deg; margin-left: -40px; margin-top: 3rem; position: relative; z-index: 1; }
+.slips > :nth-child(3) { min-height: 380px; rotate: 5deg; margin-left: -40px; }
+@media (hover: hover) and (pointer: fine) { .slips > :hover { rotate: 0deg; } }
+.slips blockquote p, .slips .score + p { font-size: var(--step-lead); line-height: 1.25; }
+.slips footer { margin-top: 1.2rem; }
+.slips .score { font-size: 8rem; line-height: 0.9; letter-spacing: -0.04em; }
+
+/* ---------- full width: find us in display rows ---------- */
+.find { margin: 12px; }
+.row { display: flex; align-items: flex-end; justify-content: space-between; min-height: 150px; padding: 0 20px 1.4rem; background: var(--paper); font-size: var(--step-head); line-height: 1; letter-spacing: -0.02em; text-decoration: none; }
+.row:nth-child(even) { background: var(--surface); }
+a.row { transition: padding-left var(--t-hover) var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { a.row:hover { padding-left: 32px; } }
+.row .go { display: inline-grid; place-items: center; width: 0.9em; height: 0.9em; border-radius: 50%; background: var(--accent); color: #fff; margin-left: 24px; }
+.row .go svg { width: 45%; height: 45%; }
+.row.hi { justify-content: flex-start; }
+
+/* ---------- footer: the name across the last photograph ---------- */
+.foot { position: relative; height: 100svh; min-height: 620px; color: var(--paper); overflow: hidden; }
+.foot > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); }
+.foot__top { position: relative; display: flex; justify-content: space-between; gap: 2rem; padding: 32px; }
+.foot__top ul { display: grid; gap: 0.2rem; }
+.foot__top a { text-decoration: none; }
+.foot__top .contact { text-align: right; max-width: 30ch; }
+.foot__bottom { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 32px 24px; }
+.foot__bottom b { display: block; font-size: 23vw; font-weight: 500; letter-spacing: -0.05em; line-height: 0.8; white-space: nowrap; }
+.credits { margin-top: 1.4rem; font-size: var(--step-small); max-width: 64ch; }
+.credits a { color: inherit; }
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .stage { position: relative; top: 0; grid-column: 1; grid-row: 1; height: 48svh; }
+  .read { grid-row: 2; margin-top: -36px; position: relative; }
+  .card { min-height: 0; }
+  .read > section:not(.card) { padding-block: 4.5rem; }
+  .card__body { padding: 2.2rem 1.2rem; }
+  .card h1 { font-size: 8.4vw; }
+  .when form { grid-template-columns: 1fr; }
+  .slips { flex-direction: column; align-items: center; }
+  .slips > * { width: min(100%, 340px); min-height: 0 !important; margin: 0 !important; }
+  .slips > :nth-child(2) { margin-top: -10px !important; }
+  .slips > :nth-child(3) { margin-top: -10px !important; }
+  .slips .score { font-size: var(--step-display); }
+  .row { min-height: 84px; padding: 0 16px 1rem; }
+  .foot { height: 88svh; }
+  .foot__top { flex-direction: column; padding: 24px 16px; }
+  .foot__top .contact { text-align: left; }
+  .foot__bottom { padding: 0 16px 16px; }
+  .foot__bottom b { font-size: 24vw; }
+}
+</style>
+</head>
+<body>
+
+<div class="split">
+  <figure class="stage" aria-label="Pictures of the walk from Old Bazar to your report">
+    <img class="is-on" src="../assets/andheri-market.jpg" width="1600" height="1200" alt="A busy market street in Andheri, near Old Bazar">
+    <img src="../assets/vacutainer-tubes.jpg" width="1600" height="1066" alt="A rack of blood collection tubes with red caps" loading="lazy">
+    <img src="../assets/drawing-blood-from-a-vein-through-phlebotomy.jpg" width="900" height="1600" alt="A blood sample being drawn from an arm" loading="lazy">
+    <img src="../assets/eosinophil-blood-smear.jpg" width="1600" height="1457" alt="Blood cells under a microscope" loading="lazy">
+    <img src="../assets/best-buses-on-m-v-road.jpg" width="1600" height="1200" alt="BEST buses on M.V. Road, Andheri East" loading="lazy">
+    <figcaption data-stage-caption>Andheri, around the corner from Old Bazar</figcaption>
+  </figure>
+
+  <main class="read" id="top">
+    <section class="card" data-photo="0" data-caption="Andheri, around the corner from Old Bazar">
+      <div class="barcode" aria-hidden="true"><span style="width:8px"></span><span style="width:4px"></span><span style="width:8px"></span><span style="width:16px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:24px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:8px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:8px"></span><span style="width:8px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:8px"></span><span style="width:4px"></span><span style="width:24px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:16px"></span><span style="width:16px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:12px"></span><span style="width:8px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:24px"></span><span style="width:4px"></span><span style="width:8px"></span><span style="width:8px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:8px"></span><span style="width:12px"></span><span style="width:24px"></span><span style="width:16px"></span><span style="width:4px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:12px"></span><span style="width:16px"></span><span style="width:4px"></span><span style="width:8px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:16px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:12px"></span><span style="width:4px"></span><span style="width:8px"></span><span style="width:16px"></span><span style="width:12px"></span><span style="width:8px"></span></div>
+      <div class="card__body">
+        <p class="wm" data-rise style="--i:0">Saifee Lab</p>
+        <h1 class="lines"><span class="line"><span data-line style="--i:1">Blood tests in Marol,</span></span><span class="line"><span data-line style="--i:2">from 7:30 every day</span></span></h1>
+        <p data-rise style="--i:3">A NABL-approved collection centre near St Lawrence School, Bori Colony. Walk in, or we come to your home anywhere in Mumbai.</p>
+        <a class="button" data-rise style="--i:4" href="https://wa.me/917304398073?text=Hi%20Saifee%20Lab%2C%20I%27d%20like%20to%20book%20a%20blood%20test.">Book on WhatsApp</a>
+        <p class="status" data-open-now>Mon–Sat 7:30 am – 8 pm · Sun till 6 pm</p>
+      </div>
+      <nav aria-label="Sections"><a class="link" href="#tests">Tests</a><a class="link" href="#how">How it works</a><a class="link" href="#find">Find us</a></nav>
+    </section>
+
+    <section class="when" data-photo="0" data-caption="Andheri, around the corner from Old Bazar" aria-labelledby="when-h">
+      <h2 id="when-h" data-reveal>When to come in</h2>
+      <p class="intro" data-reveal style="--d:1">Sugar and cholesterol tests need an empty stomach. Tell us when you last ate and we'll give you a window.</p>
+      <form data-fast data-reveal style="--d:2">
+        <label>Your test
+          <select name="test">
+            <option value="10" data-name="lipid profile">Lipid profile · 10 hrs fast</option>
+            <option value="8" data-name="fasting sugar test">Fasting sugar · 8 hrs fast</option>
+            <option value="10" data-name="full body check">Full body check · 10 hrs fast</option>
+            <option value="0" data-name="blood test">CBC, thyroid, vitamins · no fast</option>
+          </select>
+        </label>
+        <label>You last ate at <input type="time" name="meal" value="21:00"></label>
+        <output data-fast-out aria-live="polite">Fasting sugar needs 8–10 hours without food, a lipid profile 10–12. We open at 7:30 am every day.</output>
+        <a class="button" data-fast-book href="https://wa.me/917304398073">Book this time</a>
+      </form>
+    </section>
+
+    <section class="tests" id="tests" data-photo="1" data-caption="Red-cap tubes: serum for chemistry tests" aria-labelledby="tests-h">
+      <h2 id="tests-h" class="giant" data-reveal>Tests</h2>
+      <p data-reveal style="--d:1">Prices for the tests people come in for most. Ask on WhatsApp for anything not listed.</p>
+      <div class="bars">
+        <details name="bars" open data-reveal><summary>Everyday blood<span class="plus"></span></summary><ul class="plain"><li>Complete blood count <b>₹300</b><span>Haemoglobin, white cells, platelets · no fasting</span></li><li>ESR <b>₹150</b><span>A general marker of inflammation</span></li><li>Urine routine <b>₹150</b><span>First-morning sample</span></li></ul></details>
+        <details name="bars" data-reveal><summary>Sugar and diabetes<span class="plus"></span></summary><ul class="plain"><li>Blood sugar, fasting and PP <b>₹150</b><span>Fast 8–10 hours, second sample two hours after a meal</span></li><li>HbA1c <b>₹450</b><span>Three-month average · no fasting</span></li><li>Random blood sugar <b>₹100</b><span>Any time</span></li></ul></details>
+        <details name="bars" data-reveal><summary>Heart, liver and kidneys<span class="plus"></span></summary><ul class="plain"><li>Lipid profile <b>₹600</b><span>Fast 10–12 hours</span></li><li>Liver function test <b>₹600</b><span>No fasting</span></li><li>Kidney function test <b>₹600</b><span>No fasting</span></li><li>Uric acid <b>₹200</b><span>No fasting</span></li></ul></details>
+        <details name="bars" data-reveal><summary>Thyroid<span class="plus"></span></summary><ul class="plain"><li>Thyroid profile (T3, T4, TSH) <b>₹500</b><span>Morning sample if you take thyroid tablets</span></li><li>TSH only <b>₹250</b><span>No fasting</span></li></ul></details>
+        <details name="bars" data-reveal><summary>Vitamins<span class="plus"></span></summary><ul class="plain"><li>Vitamin D <b>₹1,200</b><span>No fasting</span></li><li>Vitamin B12 <b>₹900</b><span>No fasting</span></li></ul></details>
+        <details name="bars" data-reveal><summary>Fever<span class="plus"></span></summary><ul class="plain"><li>Dengue NS1 antigen <b>₹600</b><span>First five days of fever</span></li><li>Malaria antigen and smear <b>₹400</b><span>Rapid test plus slide</span></li><li>Typhoid (Widal) <b>₹250</b><span>No fasting</span></li><li>CRP <b>₹450</b><span>No fasting</span></li></ul></details>
+        <details name="bars" data-reveal><summary>Clotting<span class="plus"></span></summary><ul class="plain"><li>PT / INR <b>₹500</b><span>Before surgery, on blood thinners</span></li><li>APTT <b>₹450</b><span>Often paired with PT</span></li></ul></details>
+        <details name="bars" data-reveal><summary>Packages<span class="plus"></span></summary><ul class="plain"><li>Basic health check <b>₹999</b><span>CBC, fasting sugar, lipids, liver, kidney, urine</span></li><li>Full body check <b>₹1,999</b><span>The basic check plus thyroid, HbA1c, vitamin D, B12</span></li></ul></details>
+      </div>
+      <p class="note" data-reveal>Prices include collection at the centre. A home visit adds a small travel charge, quoted when you book.</p>
+    </section>
+
+    <section class="how" id="how" data-photo="2" data-caption="One gentle prick, a fresh sealed needle" aria-labelledby="how-h">
+      <h2 id="how-h" data-reveal>Ten minutes at the counter</h2>
+      <p data-reveal style="--d:1">No token, no queue to speak of. Here is a morning visit, as it runs.</p>
+      <div class="slip" data-reveal style="--d:2">
+        <h3>At the centre</h3>
+        <ul class="plain">
+          <li>Walk in, no appointment<i></i><span class="v">7:30 am</span></li>
+          <li>Name and tests at the counter<i></i><span class="v">2 min</span></li>
+          <li>Sample drawn, sealed needle<i></i><span class="v">5 min</span></li>
+          <li>Tubes labelled in front of you<i></i><span class="v">1 min</span></li>
+        </ul>
+        <h3>The same day</h3>
+        <ul class="plain">
+          <li>Tested at a NABL-approved lab<i></i><span class="v">by noon</span></li>
+          <li>Report checked and signed<i></i><span class="v">afternoon</span></li>
+          <li>PDF sent to your WhatsApp<i></i><span class="v">evening</span></li>
+        </ul>
+        <p class="total"><span>Your report, on your phone</span><span>same day</span></p>
+      </div>
+    </section>
+
+    <section class="faq" data-photo="3" data-caption="What the lab sees: blood cells under a microscope" aria-labelledby="faq-h">
+      <h2 id="faq-h" data-reveal>Before you come</h2>
+      <div class="notes">
+        <p data-reveal><b>Do I need an appointment?</b> No. Walk in any day from 7:30 am; we close at 8 pm, and at 6 pm on Sundays. For a home visit, message us a day ahead.</p>
+        <p data-reveal><b>How long should I fast?</b> 8 to 10 hours for fasting sugar, 10 to 12 for a lipid profile or full body check. Plain water is fine. Take your regular medicines unless your doctor says otherwise.</p>
+        <p data-reveal><b>When will I get my report?</b> Most routine tests the same evening, as a PDF on WhatsApp. Vitamins and special tests can take one to two days.</p>
+        <p data-reveal><b>Is the lab NABL approved?</b> Yes. Samples collected at Saifee Lab are processed at a NABL-approved laboratory.</p>
+        <p data-reveal><b>Do I need a prescription?</b> Not for routine tests. If you have one, bring it so we run exactly what your doctor asked for.</p>
+        <p data-reveal><b>How can I pay?</b> Cash or UPI at the centre, or to the phlebotomist on a home visit.</p>
+      </div>
+    </section>
+
+    <section class="when visit" id="visit" data-photo="4" data-caption="On the road to you: M.V. Road, Andheri East" aria-labelledby="visit-h">
+      <h2 id="visit-h" data-reveal>We come to your home</h2>
+      <p class="intro" data-reveal style="--d:1">Anywhere in Mumbai, from 7 in the morning, so you can give a fasting sample before breakfast. Fill this in and WhatsApp opens with your request written out.</p>
+      <form data-wa-form data-reveal style="--d:2">
+        <label>Your name <input name="name" autocomplete="name"></label>
+        <label>Area <input name="area" placeholder="Marol, Saki Naka, Powai…"></label>
+        <label>Date and time <input name="date"></label>
+        <label>Tests <input name="tests" placeholder="or 'not sure'"></label>
+        <button class="button" type="submit">Send on WhatsApp</button>
+      </form>
+    </section>
+  </main>
+</div>
+
+<section class="reviews" aria-labelledby="rev-h">
+  <h2 id="rev-h" data-reveal>What neighbours say</h2>
+  <div class="slips">
+    <blockquote data-reveal><p>“Professional people and maintained very well. Fast and accurate report.”</p><footer>Maimoona C., Google review</footer></blockquote>
+    <blockquote data-reveal style="--d:1"><p>“Very kind and devoted to patient-centric humbleness.”</p><footer>Dr Murtaza Kothawala, Hakimi Clinic</footer></blockquote>
+    <div data-reveal style="--d:2"><p class="score">4.8</p><p>out of 5 on Google, from 12 reviews.</p><footer>Mentioned most: fast report, accurate reports, professional staff.</footer></div>
+  </div>
+</section>
+
+<section class="find" id="find" aria-label="Find us">
+  <p class="row" data-reveal>Saifee Lab</p>
+  <a class="row" data-reveal href="https://www.google.com/maps/search/?api=1&query=Saifee+lab+Marol+Andheri+East">Shop 4, Old Bazar, Bori Colony</a>
+  <p class="row" data-reveal>Marol, Mumbai 400059</p>
+  <p class="row" data-reveal>7:30 am – 8 pm, Sun till 6</p>
+  <a class="row" data-reveal href="tel:+917304398073">73043 98073</a>
+  <a class="row hi" data-reveal href="https://wa.me/917304398073?text=Hi%20Saifee%20Lab%2C%20I%27d%20like%20to%20book%20a%20blood%20test.">Namaste<span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span><span class="sr-only">Book on WhatsApp</span></a>
+</section>
+
+<footer class="foot">
+  <img src="../assets/andheri-market.jpg" width="1600" height="1200" alt="" loading="lazy">
+  <div class="foot__top">
+    <ul class="plain"><li><a class="link" href="#tests">Tests and prices</a></li><li><a class="link" href="#how">How it works</a></li><li><a class="link" href="#visit">Home visit</a></li><li><a class="link" href="https://www.instagram.com/saifee_lab/">Instagram</a></li></ul>
+    <p class="contact">Shop no. 4, Marubai Mendonsa Chawl, Old Bazar, near St Lawrence School, Bori Colony, Marol, Andheri East, Mumbai 400059 · <a class="link" href="tel:+917304398073">73043 98073</a> · <a class="link" href="tel:+917738434252">77384 34252</a></p>
+  </div>
+  <div class="foot__bottom">
+    <b aria-hidden="true">Saifee Lab</b>
+    <p class="credits">© 2026 Saifee Lab. Pictures show the world of blood testing and Andheri, not Saifee Lab itself: <a href="https://www.flickr.com/photos/59353670@N00/303211962">“Andheri Market”</a> by madpai and <a href="https://www.flickr.com/photos/77143225@N00/457292570">“BEST buses on M.V.Road”</a> by Nik Man, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Vacutainer_tubes.jpg">“Vacutainer tubes”</a> by Håkan Dahlström, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=149293736">“Drawing blood from a vein”</a> by Harrison Keely, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=7761793">“Eosinophil blood smear”</a> by Bobjgalindo, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Via Flickr and Wikimedia Commons.</p>
+  </div>
+</footer>
+
+<script src="../shared/base.js"></script>
+<script src="../shared/live.js"></script>
+<script>
+// The fixed photograph follows the section you are reading.
+(() => {
+  const imgs = [...document.querySelectorAll('.stage img')];
+  const cap = document.querySelector('[data-stage-caption]');
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      const n = +e.target.dataset.photo;
+      imgs.forEach((im, i) => im.classList.toggle('is-on', i === n));
+      cap.textContent = e.target.dataset.caption;
+    }
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  document.querySelectorAll('[data-photo]').forEach((s) => io.observe(s));
+})();
+</script>
+</body>
+</html>
