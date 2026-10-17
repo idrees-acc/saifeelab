@@ -61,7 +61,6 @@ p { text-wrap: pretty; }
 .container { width: 100%; max-width: calc(var(--container) + var(--gutter) * 2); margin-inline: auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section); }
 .section--tint { background: var(--surface); }
-.num { font-variant-numeric: tabular-nums; }
 
 /* ---------- section headings ---------- */
 .head { max-width: 640px; margin-bottom: clamp(2.25rem, 4vw, 3.5rem); }
